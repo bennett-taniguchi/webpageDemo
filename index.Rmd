@@ -1,0 +1,31 @@
+---
+title: "Info201markdownrdemo"
+author: "Bennett Taniguchi"
+date: "8/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r include = FALSE}
+library("knitr")
+source("lecture11.R")
+
+```
+
+## This is a demo of R markdown to show how we can use it.
+
+According to our analysis, the highest sugar value is `r max_sugars` g and the lowest sugar value is `r min_sugars` g. The cereals with `r max_sugars` g of sugars are `r max_row_name`. Here is the summary information on sugars.
+
+```{r, echo = FALSE}
+kable(summary_piped)
+```
+
+### Here are all the cereals sorted by sugar content:
+
+```{r}
+kable(sugar_vals_piped)
+```
